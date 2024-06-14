@@ -1,4 +1,6 @@
 #include <bits/stdc++.h>
+#include <math.h>
+
 using namespace std;
 class Solution
 {
@@ -6,12 +8,26 @@ public:
     string Armstrong(int x)
     {
         int origNo = x;
+
+        int count = 0;
+
         cout << x << endl;
+
         int container = 0;
+
+        //counting digits
+        int countDig = x;
+        while (countDig > 0)
+        {
+            count++;
+            countDig = countDig / 10;
+        }
+
+    
         while (x != 0)
         {
             int ld = x % 10;
-            container = container + (ld * ld * ld);
+            container = container + pow(ld, count);
             x /= 10;
         }
         if (origNo == container)
@@ -27,6 +43,6 @@ public:
 int main()
 {
     Solution sol;
-    cout << sol.Armstrong(371) << endl;
+    cout << sol.Armstrong(1634) << endl;
     return 0;
 }
