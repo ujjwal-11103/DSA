@@ -31,5 +31,11 @@ int main()
         cout << "The " << number << " is occured for " << mpp[number] << " times" << endl;
         q--;
     }
+
+    // Elements are automatically sorted by key
+    for (const auto &pair : mpp)
+    {
+        cout << pair.first << ": " << pair.second << endl;
+    }
     return 0;
 }
