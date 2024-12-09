@@ -28,6 +28,7 @@ int main()
         cout << pair.first << ":" << pair.second << endl;
     }
 
+    // calculating highest frequency
     int maxKey = 0;
     int maxValue = 0;
 
@@ -40,6 +41,21 @@ int main()
         }
     }
 
-    cout << "The Highest frequency of the element are :\n";
-    cout << maxKey << ":" << maxValue;
+    cout << "The Highest frequency of the element is :\n";
+    cout << maxKey << ":" << maxValue << endl;
+    // calculating lowest frequency
+    int minKey = 0;
+    int minValue = n;
+
+    for (const auto &pair : mpp)
+    {
+        if (pair.second <= minValue)
+        {
+            minValue = pair.second;
+            minKey = pair.first;
+        }
+    }
+
+    cout << "The Lowest frequency of the element is :\n";
+    cout << minKey << ":" << minValue;
 }
